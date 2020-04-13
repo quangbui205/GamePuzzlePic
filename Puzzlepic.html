@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzlepic</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<img id="image01" onclick="changeimage01()" src="https://bitly.com.vn/9D2vK"> <br>
+<img id="image02" onclick="changeimage02()" src="https://bitly.com.vn/TUrzE"> <br>
+<img id="image03" onclick="changeimage03()" src="https://bitly.com.vn/YZqCA">
+<script>
+    IMG01 = "https://bitly.com.vn/9D2vK";
+    IMG02 = "https://bitly.com.vn/TUrzE";
+    IMG03 = "https://bitly.com.vn/YZqCA";
+    function changeimage01() {
+        if (document.getElementById("image01").src == IMG01) //ảnh 1 trùng//
+        {
+            document.getElementById("image01").src = IMG02;  //chuyển sang ảnh 2//
+        }
+        else if(document.getElementById("image01").src == IMG02)  //ảnh 2 trùng//
+        {
+            document.getElementById("image01").src = IMG03;   //chuyển sang ảnh 3//
+        }
+        else
+        {
+            document.getElementById("image01").src = IMG01 ;  //chuyển lại ảnh 1//
+        }
+        setTimeout(function changeigame01() {
+            if (((document.getElementById("image01").src)==(document.getElementById("image02").src)) && ((document.getElementById("image02").src)==(document.getElementById("image03").src)))
+            {
+                alert("You Win");
+            }
+        },1000);
+    }
+    function changeimage02() {
+        if (document.getElementById("image02").src == IMG02)
+        {
+            document.getElementById("image02").src = IMG03;
+        }
+        else if(document.getElementById("image02").src == IMG03)
+        {
+            document.getElementById("image02").src = IMG01;
+        }
+        else
+        {
+            document.getElementById("image02").src = IMG02 ;
+        }
+        setTimeout(function changeimage02() {
+            if (((document.getElementById("image01").src)==(document.getElementById("image02").src)) && ((document.getElementById("image02").src)==(document.getElementById("image03").src)))
+            {
+                alert("You Win");
+            }
+        },1000);
+    }
+    function changeimage03() {
+        if (document.getElementById("image03").src == IMG03) {
+            document.getElementById("image03").src = IMG01;
+        } else if (document.getElementById("image03").src == IMG01) {
+            document.getElementById("image03").src = IMG02;
+        } else {
+            document.getElementById("image03").src = IMG03;
+        }
+        setTimeout(function changeimage03() {
+            if (((document.getElementById("image01").src)==(document.getElementById("image02").src)) && ((document.getElementById("image02").src)==(document.getElementById("image03").src)))
+            {
+                alert("You Win");
+            }
+        },1000);
+    }
+
+</script>
+</body>
+</html>
